@@ -29,19 +29,23 @@ window.TOXIC_TOUR_STOPS = [
     corridor: 'buffalo',
     location: 'Buffalo Avenue at 47th Street, Niagara Falls, NY',
     mapQuery: 'Buffalo Avenue and 47th Street Niagara Falls NY',
-    lat: 43.0848,
-    lng: -78.9629,
+    lat: 43.078470,
+    lng: -79.009900,
     duration: '6–10 min',
     summary: 'Hooker’s Buffalo Avenue complex belonged to the dense chemical-industrial corridor along the upper Niagara River. In the uranium chain assembled for this project, Hooker also appears in uranium-recovery work — a reminder that “chemical” and “atomic” Niagara overlapped.',
     body: [
       'Buffalo Avenue should not be treated as separate from Atomic Niagara. The corridor held major chemical, carbon, ceramic, and metallurgical operations whose wastes moved through the same regional disposal economy.',
-      'Hooker’s history here also adds context to Love Canal: the company that became synonymous with buried chemical waste was part of a much larger industrial system extending along the river.'
+      'Hooker’s history here also adds context to Love Canal: the company that became synonymous with buried chemical waste was part of a much larger industrial system extending along the river.',
+      'The plant’s danger was not abstract. In December 1975, a rail tank car storing recovered chlorine exploded beside the Hooker complex. A federal accident summary records four plant workers killed; about 80 area residents inhaled chlorine gas and 20 were hospitalized.',
+      'The chlorine process also carried a long occupational asbestos history. Later reporting on the OxyChem/Hooker plant documented asbestos-containing diaphragms and worker exposure inside the Niagara Falls chlorine operation.'
     ],
     callout: 'Buffalo Avenue is an atomic corridor too.',
     lookFor: 'The relationship between the river, rail and industrial parcels, and the scale of the manufacturing corridor.',
     sources: [
       { label: 'Historic Hooker address record', url: 'https://uspto.report/TM/72192823' },
-      { label: 'Congressional record — Buffalo Ave industrial context', url: 'https://www.govinfo.gov/content/pkg/GPO-CRECB-1979-pt6/pdf/GPO-CRECB-1979-pt6-6-3.pdf' }
+      { label: 'Congressional record — Buffalo Ave industrial context', url: 'https://www.govinfo.gov/content/pkg/GPO-CRECB-1979-pt6/pdf/GPO-CRECB-1979-pt6-6-3.pdf' },
+      { label: 'Federal Railroad Administration — 1975 chlorine tank explosion summary', url: 'https://railroads.dot.gov/sites/fra.dot.gov/files/fra_net/18852/dot_9675_DS1.pdf' },
+      { label: 'ProPublica — asbestos exposure at the OxyChem/Hooker plant', url: 'https://www.propublica.org/article/asbestos-poisoning-chemical-plant-niagara-falls' }
     ]
   },
   {
@@ -52,8 +56,8 @@ window.TOXIC_TOUR_STOPS = [
     corridor: 'buffalo',
     location: '5500 Goodyear Drive, Niagara Falls, NY 14304',
     mapQuery: '5500 Goodyear Drive Niagara Falls NY 14304',
-    lat: 43.0876,
-    lng: -78.9567,
+    lat: 43.086111,
+    lng: -79.001944,
     duration: '5–8 min',
     summary: 'The Goodyear chemical plant is part of the industrial belt that made Niagara Falls a national manufacturing center. Its presence helps read Buffalo Avenue as a continuous industrial system rather than a collection of isolated sites.',
     body: [
@@ -122,8 +126,8 @@ window.TOXIC_TOUR_STOPS = [
     corridor: 'highland',
     location: '3801–3807 Highland Avenue, Niagara Falls, NY',
     mapQuery: '3807 Highland Avenue Niagara Falls NY',
-    lat: 43.1182,
-    lng: -79.0457,
+    lat: 43.122623,
+    lng: -79.039978,
     duration: '8–12 min',
     summary: 'Highland Avenue is another heavy-industrial corridor with a long sequence of metallurgical operators. The history here is distinct from Electromet, but it belongs in the same regional story of slag, landfills, off-site hauling, and contaminated industrial land.',
     body: [
@@ -145,8 +149,8 @@ window.TOXIC_TOUR_STOPS = [
     corridor: 'waste',
     location: '5600 Niagara Falls Boulevard, Niagara Falls, NY',
     mapQuery: '5600 Niagara Falls Boulevard Niagara Falls NY',
-    lat: 43.1089,
-    lng: -78.9865,
+    lat: 43.093953,
+    lng: -78.962762,
     duration: '8–12 min',
     summary: 'Investigative reporting and historical records identify the former Union Carbide disposal property, later associated with Newco / CECOS, as a key node in the regional waste network. A 1965 state exemption allowed Union Carbide to bury radioactive waste on property it owned.',
     body: [
@@ -168,8 +172,8 @@ window.TOXIC_TOUR_STOPS = [
     corridor: 'waste',
     location: '789 Upper Mountain Road, Lewiston, NY',
     mapQuery: '789 Upper Mountain Road Lewiston NY',
-    lat: 43.1568,
-    lng: -79.0037,
+    lat: 43.156180,
+    lng: -79.018420,
     duration: '6–10 min',
     summary: 'Decades after the original uranium-production era, radioactive material associated with industrial fill was found at a residential property on Upper Mountain Road. The later cleanup removed thousands of tons of material and cost millions of dollars.',
     body: [
@@ -190,8 +194,8 @@ window.TOXIC_TOUR_STOPS = [
     corridor: 'waste',
     location: '1397 Pletcher Road, Lewiston, NY 14092',
     mapQuery: '1397 Pletcher Road Lewiston NY 14092',
-    lat: 43.290433,
-    lng: -78.0200,
+    lat: 43.217,
+    lng: -78.986,
     duration: '10–15 min',
     summary: 'The former Lake Ontario Ordnance Works became a major storage and disposal landscape for Manhattan Project and Atomic Energy Commission wastes. Today the federally owned Niagara Falls Storage Site contains the Interim Waste Containment Structure completed in 1986.',
     body: [
