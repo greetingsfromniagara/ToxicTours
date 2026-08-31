@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d1fe5f">
+  <meta name="description" content="Toxic Niagara: a self-guided driving tour through Niagara Falls' industrial, chemical, and radioactive history.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Toxic Niagara">
+  <title>Toxic Niagara — Driving Tour</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to tour</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Toxic Niagara home">
+      <span class="brand-mark" aria-hidden="true">TN</span>
+      <span>Toxic Niagara</span>
+    </a>
+    <div class="topbar-actions">
+      <button class="text-button" id="installButton" type="button" hidden>Install app</button>
+      <button class="icon-button" id="menuButton" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="menu-panel" id="menuPanel" aria-label="Tour menu" hidden>
+    <a href="#tour">Tour stops</a>
+    <a href="#uranium-route">The uranium route</a>
+    <a href="#how-to-use">How to use</a>
+    <a href="#sources">Sources</a>
+    <button class="menu-reset" id="resetProgress" type="button">Reset tour progress</button>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">A self-guided driving tour</p>
+        <h1>Toxic<br>Niagara</h1>
+        <p class="dek">The waterfalls hide another landscape: uranium production, chemical manufacturing, buried waste, radioactive slag, landfills, and neighborhoods built beside — and sometimes over — the industrial record.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#tour">Start the tour</a>
+          <button class="secondary-button" id="locateButton" type="button">Use my location</button>
+        </div>
+        <p class="location-status" id="locationStatus" role="status" aria-live="polite">Location is off. The tour works without it.</p>
+      </div>
+      <div class="hero-stat" aria-label="Tour overview">
+        <span class="hero-stat-number" id="stopCount">10</span>
+        <span>stops · two industrial corridors · one regional waste network</span>
+      </div>
+    </section>
+
+    <section class="warning-band" aria-label="Safety note">
+      <p><strong>Drive safely.</strong> Pull over only where legal. Stay on public roads and public property. Do not enter active industrial sites, landfills, fenced areas, rail corridors, vacant lots, or private property.</p>
+    </section>
+
+    <section class="intro section" id="how-to-use">
+      <div class="section-label">Before you begin</div>
+      <div class="intro-grid">
+        <h2>This is a landscape tour, not a contamination detector.</h2>
+        <div class="prose">
+          <p>The app points to documented places and explains what happened there. A site can have a cleanup history and still carry restrictions, capped material, buried contamination, institutional controls, or unresolved questions.</p>
+          <p class="pullquote">“Remediated” does not mean contamination-free.</p>
+          <p>Location access is optional and used only in your browser to estimate which stop is closest. The app does not need an account and does not send your location to a Toxic Niagara server.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="uranium section" id="uranium-route">
+      <div class="section-label">The uranium route</div>
+      <div class="uranium-head">
+        <h2>Follow the uranium step by step.</h2>
+        <p>Niagara was not one atomic site. It was a production network. The route crossed company lines, city lines, and eventually the boundary between factory waste and the everyday landscape.</p>
+      </div>
+      <ol class="process-line" aria-label="Uranium production route">
+        <li><span>01</span><strong>Shinkolobwe</strong><small>high-grade ore · Belgian Congo</small></li>
+        <li><span>02</span><strong>Linde</strong><small>oxides + uranium tetrafluoride · Tonawanda</small></li>
+        <li><span>03</span><strong>Electromet</strong><small>green salt → uranium metal · Niagara Falls</small></li>
+        <li><span>04</span><strong>Bliss & Laughlin</strong><small>uranium rolling · Lockport</small></li>
+        <li><span>05</span><strong>Hooker</strong><small>uranium recovery + chemical industry · Niagara Falls</small></li>
+        <li><span>06</span><strong>Carborundum</strong><small>final Niagara-area industrial leg in this project’s route</small></li>
+        <li><span>07</span><strong>LOOW / NFSS</strong><small>storage, burial, consolidation · Lewiston</small></li>
+      </ol>
+    </section>
+
+    <section class="tour section" id="tour">
+      <div class="tour-heading">
+        <div>
+          <div class="section-label">Driving tour</div>
+          <h2>Niagara Falls to Model City</h2>
+        </div>
+        <div class="progress-wrap" aria-label="Tour progress">
+          <div class="progress-copy"><span id="progressText">0 of 10 visited</span><span id="progressPercent">0%</span></div>
+          <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+      </div>
+
+      <div class="corridor-legend" aria-label="Tour categories">
+        <span><i class="dot dot-buffalo"></i>Buffalo Avenue atomic + chemical corridor</span>
+        <span><i class="dot dot-highland"></i>Highland / Pine atomic + metals corridor</span>
+        <span><i class="dot dot-waste"></i>Waste, fill + disposal network</span>
+      </div>
+
+      <div class="tour-list" id="tourList" aria-live="polite"></div>
+    </section>
+
+    <section class="network section">
+      <div class="section-label">What the route reveals</div>
+      <div class="network-grid">
+        <h2>A regional network — not a single source.</h2>
+        <div class="prose">
+          <p>Radioactive slag used as fill could have come from more than one industrial source. Federal and state investigations later separated some road and property anomalies from Manhattan Project waste and linked others to industrial slag beneath asphalt, driveways, parking lots, and roads.</p>
+          <p>The driving tour keeps those histories together because that is how the landscape works: factories, haulers, disposal areas, road fill, creeks, neighborhoods, and later cleanup programs overlap.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources section" id="sources">
+      <div class="section-label">Evidence</div>
+      <div class="sources-grid">
+        <h2>Built from the record.</h2>
+        <div class="prose">
+          <p>Each stop includes source links to government records, federal worker-exposure documentation, cleanup records, and reporting used in <em>Greetings from Niagara</em>. The tour distinguishes documented facts from interpretation and flags places where the historical footprint is approximate.</p>
+          <p>This first standalone build is structured so photographs, archival documents, audio, and your full citations can be added stop by stop without rebuilding the app.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Toxic Niagara</strong><br>A project from <em>Greetings from Niagara</em></div>
+    <div class="footer-note">Self-guided research tour · Niagara Falls, New York</div>
+  </footer>
+
+  <dialog id="stopDialog" class="stop-dialog">
+    <button class="dialog-close" id="dialogClose" type="button" aria-label="Close stop">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="./data/stops.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
