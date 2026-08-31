@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#d1fe5f">
-  <meta name="description" content="Toxic Niagara: a self-guided driving tour through Niagara Falls' industrial, chemical, and radioactive history.">
+  <meta name="description" content="Toxic Niagara: a self-guided driving tour through Niagara Falls' industrial, chemical, radioactive and aerospace history.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Toxic Niagara">
@@ -42,7 +42,7 @@
       <div class="hero-copy">
         <p class="eyebrow">A self-guided driving tour</p>
         <h1>Toxic<br>Niagara</h1>
-        <p class="dek">The waterfalls hide another landscape: uranium production, chemical manufacturing, buried waste, radioactive slag, landfills, and neighborhoods built beside — and sometimes over — the industrial record.</p>
+        <p class="dek">The waterfalls hide another landscape: uranium production, chemical manufacturing, rocket and aerospace research, buried waste, radioactive slag, landfills, and neighborhoods built beside — and sometimes over — the industrial record.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#tour">Start the tour</a>
           <button class="secondary-button" id="locateButton" type="button">Use my location</button>
@@ -50,8 +50,8 @@
         <p class="location-status" id="locationStatus" role="status" aria-live="polite">Location is off. The tour works without it.</p>
       </div>
       <div class="hero-stat" aria-label="Tour overview">
-        <span class="hero-stat-number" id="stopCount">11</span>
-        <span>stops · two industrial corridors · one regional waste network</span>
+        <span class="hero-stat-number" id="stopCount">12</span>
+        <span>stops · industrial corridors · aerospace · a regional waste network</span>
       </div>
     </section>
 
@@ -95,7 +95,7 @@
           <h2>Niagara Falls to Model City</h2>
         </div>
         <div class="progress-wrap" aria-label="Tour progress">
-          <div class="progress-copy"><span id="progressText">0 of 11 visited</span><span id="progressPercent">0%</span></div>
+          <div class="progress-copy"><span id="progressText">0 of 12 visited</span><span id="progressPercent">0%</span></div>
           <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
         </div>
       </div>
@@ -104,7 +104,8 @@
         <span><i class="dot dot-buffalo"></i>Buffalo Avenue atomic + chemical corridor</span>
         <span><i class="dot dot-highland"></i>Highland / Pine atomic + metals corridor</span>
         <span><i class="dot dot-waste"></i>Waste, fill + disposal network</span>
-        <span><i class="dot dot-survey"></i>1984–1985 radiological survey</span>
+        <span><i class="dot dot-survey"></i>1978–1985 radiological surveys</span>
+        <span><i class="dot dot-aerospace"></i>Bell aerospace + rocket research</span>
       </div>
 
       <div class="tour-list" id="tourList" aria-live="polite"></div>
@@ -116,7 +117,7 @@
         <h2>A regional network — not a single source.</h2>
         <div class="prose">
           <p>Radioactive slag used as fill could have come from more than one industrial source. Federal and state investigations later separated some road and property anomalies from Manhattan Project waste and linked others to industrial slag beneath asphalt, driveways, parking lots, and roads.</p>
-          <p>The driving tour keeps those histories together because that is how the landscape works: factories, haulers, disposal areas, road fill, creeks, neighborhoods, and later cleanup programs overlap.</p>
+          <p>The driving tour keeps those histories together because that is how the landscape works: factories, aerospace research, haulers, disposal areas, road fill, creeks, neighborhoods, and later cleanup programs overlap.</p>
         </div>
       </div>
     </section>
@@ -126,8 +127,8 @@
       <div class="sources-grid">
         <h2>Built from the record.</h2>
         <div class="prose">
-          <p>Each stop is backed by government records, federal worker-exposure documentation, cleanup records, and reporting used in <em>Greetings from Niagara</em>. The source metadata stays in the project data rather than interrupting the driving-tour narrative.</p>
-          <p>This first standalone build is structured so photographs, archival documents, audio, and expanded evidence can be added stop by stop without rebuilding the app.</p>
+          <p>Each stop is backed by government records, federal worker-exposure documentation, cleanup records, aerospace histories and reporting used in <em>Greetings from Niagara</em>. The source metadata stays in the project data rather than interrupting the driving-tour narrative.</p>
+          <p>The app is structured so photographs, archival documents, audio, and expanded evidence can be added stop by stop without rebuilding the project.</p>
         </div>
       </div>
     </section>
@@ -145,6 +146,7 @@
 
   <script src="./data/stops.js"></script>
   <script src="./data/survey.js"></script>
+  <script src="./data/bell.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
