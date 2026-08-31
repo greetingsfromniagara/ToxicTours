@@ -31,6 +31,7 @@ window.TOXIC_TOUR_STOPS.push({
     { label: 'Smithsonian National Air and Space Museum — Bell X-1 and Mach 1', url: 'https://airandspace.si.edu/collection-objects/bell-x-1-glamorous-glennis/nasm_A19510007000' },
     { label: 'NASA — Bell X-2 airframes built at Wheatfield', url: 'https://www.nasa.gov/image-article/x-2/' },
     { label: 'U.S. Air Force Museum — Bell XGAM-63 RASCAL nuclear missile', url: 'https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/195737/bell-xgam-63-rascal/' },
+    { label: 'Declassified RASCAL weapon-system facilities report — Bell Niagara Frontier plants', url: 'https://documents.theblackvault.com/documents/weapons/system112ab.pdf' },
     { label: 'NASA — Lunar Landing Research Vehicle history and Bell aerospace expertise', url: 'https://www.nasa.gov/wp-content/uploads/2021/04/187516main_LLRV_Monograph2.pdf' },
     { label: 'NYSDEC — 2025 Bell Aerospace-Textron groundwater monitoring evaluation', url: 'https://extapps.dec.ny.gov/data/DecDocs/932052/Report.HW.932052.2025-02-05.RCRA_CME_Report.pdf' },
     { label: 'NYSDEC — Region 9 remediation records, including Nash Road landfill users', url: 'https://dec.ny.gov/environmental-protection/site-cleanup/regional-remediation-project-information/region-9' }
