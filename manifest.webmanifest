@@ -1,0 +1,19 @@
+{
+  "name": "Toxic Niagara — Driving Tour",
+  "short_name": "Toxic Niagara",
+  "description": "A self-guided driving tour through Niagara Falls' industrial, chemical, and radioactive history.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#11120f",
+  "theme_color": "#d1fe5f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
