@@ -103,7 +103,6 @@
   }
 
   function openStop(stop) {
-    const sources = (stop.sources || []).map(source => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.label)} ↗</a>`).join('');
     const paragraphs = (stop.body || []).map(p => `<p>${escapeHtml(p)}</p>`).join('');
     dialogContent.innerHTML = `
       <article class="dialog-inner">
@@ -115,7 +114,6 @@
         <div class="dialog-callout">${escapeHtml(stop.callout)}</div>
         <div class="dialog-look"><strong>What to notice</strong>${escapeHtml(stop.lookFor)}</div>
         <a class="dialog-map" href="${mapUrl(stop)}" target="_blank" rel="noopener">Open driving directions ↗</a>
-        <div class="dialog-sources"><strong>Sources</strong>${sources}</div>
       </article>`;
     stopDialog.showModal();
   }
