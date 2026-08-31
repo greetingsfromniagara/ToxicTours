@@ -110,6 +110,16 @@
     updateProgress();
   }
 
+  function milestoneMarkup(stop) {
+    if (!Array.isArray(stop.milestones) || !stop.milestones.length) return '';
+    const items = stop.milestones.map(item => `
+      <article class="milestone-item">
+        <div class="milestone-year">${escapeHtml(item.year)}</div>
+        <div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.text)}</p></div>
+      </article>`).join('');
+    return `<section class="milestones"><div class="milestones-label">Why Niagara mattered</div>${items}</section>`;
+  }
+
   function hotspotMarkup(stop) {
     if (!Array.isArray(stop.hotspots) || !stop.hotspots.length) return '';
     const maxReading = Math.max(...stop.hotspots.map(item => item.reading || 0), 1);
@@ -141,6 +151,7 @@
 
   function openStop(stop) {
     const paragraphs = (stop.body || []).map(p => `<p>${escapeHtml(p)}</p>`).join('');
+    const milestoneSection = milestoneMarkup(stop);
     const hotspotSection = hotspotMarkup(stop);
     const directions = stop.multiLocation ? '' : `<a class="dialog-map" href="${mapUrl(stop)}" target="_blank" rel="noopener">Open driving directions ↗</a>`;
 
@@ -151,6 +162,7 @@
         <p class="dialog-kicker">${escapeHtml(stop.kicker)}</p>
         <p class="dialog-summary">${escapeHtml(stop.summary)}</p>
         <div class="dialog-body">${paragraphs}</div>
+        ${milestoneSection}
         ${hotspotSection}
         <div class="dialog-callout">${escapeHtml(stop.callout)}</div>
         <div class="dialog-look"><strong>What to notice</strong>${escapeHtml(stop.lookFor)}</div>
