@@ -1,0 +1,28 @@
+:root { --survey: #ffca58; }
+
+.dot-survey { background: var(--survey); }
+.stop-card[data-corridor="survey"] { box-shadow: inset 4px 0 0 var(--survey); padding-left: 18px; }
+.stop-card[data-corridor="survey"] .stop-kicker { color: #806218; }
+.stop-actions.single { grid-template-columns: 1fr; }
+
+.survey-readings { margin: 34px 0 8px; padding: 24px; border-radius: 16px; background: #171914; color: #f0eee7; }
+.survey-readings-head > span { display: block; color: var(--survey); text-transform: uppercase; letter-spacing: .13em; font-size: 10px; font-weight: 900; }
+.survey-readings-head p { margin: 10px 0 28px; color: #b9bbb2; font-size: 14px; line-height: 1.45; max-width: 640px; }
+.hotspot-list { border-top: 1px solid rgba(255,255,255,.16); }
+.hotspot-item { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+.hotspot-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.hotspot-topline { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
+.hotspot-topline span { color: #a8aaa1; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.hotspot-topline strong { flex: 0 0 auto; color: var(--survey); font-size: clamp(25px, 5vw, 40px); line-height: .9; letter-spacing: -.055em; }
+.hotspot-bar { height: 6px; margin: 12px 0 10px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,.12); }
+.hotspot-bar i { display: block; height: 100%; border-radius: inherit; background: var(--survey); }
+.hotspot-place { font-size: 15px; font-weight: 800; line-height: 1.25; }
+.hotspot-directions { display: inline-block; margin-left: 8px; color: var(--survey); font-size: 11px; font-weight: 800; white-space: nowrap; }
+.hotspot-item p { margin: 8px 0 0; color: #b9bbb2; font-size: 14px; line-height: 1.4; }
+
+@media (max-width: 620px) {
+  .stop-card[data-corridor="survey"] { padding-left: 12px; }
+  .survey-readings { margin-left: -4px; margin-right: -4px; padding: 20px 16px; }
+  .hotspot-topline { align-items: flex-end; }
+  .hotspot-place { font-size: 14px; }
+}
