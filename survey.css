@@ -1,8 +1,11 @@
-:root { --survey: #ffca58; }
+:root { --survey: #ffca58; --aerospace: #8edcff; }
 
 .dot-survey { background: var(--survey); }
+.dot-aerospace { background: var(--aerospace); }
 .stop-card[data-corridor="survey"] { box-shadow: inset 4px 0 0 var(--survey); padding-left: 18px; }
 .stop-card[data-corridor="survey"] .stop-kicker { color: #806218; }
+.stop-card[data-corridor="aerospace"] { box-shadow: inset 4px 0 0 var(--aerospace); padding-left: 18px; }
+.stop-card[data-corridor="aerospace"] .stop-kicker { color: #326b84; }
 .stop-actions.single { grid-template-columns: 1fr; }
 
 .survey-readings { margin: 34px 0 8px; padding: 24px; border-radius: 16px; background: #171914; color: #f0eee7; }
@@ -20,9 +23,18 @@
 .hotspot-directions { display: inline-block; margin-left: 8px; color: var(--survey); font-size: 11px; font-weight: 800; white-space: nowrap; }
 .hotspot-item p { margin: 8px 0 0; color: #b9bbb2; font-size: 14px; line-height: 1.4; }
 
+.milestones { margin: 34px 0 8px; border-top: 1px solid var(--line); }
+.milestones-label { padding: 20px 0 12px; text-transform: uppercase; letter-spacing: .13em; font-size: 10px; font-weight: 900; color: #326b84; }
+.milestone-item { display: grid; grid-template-columns: 92px 1fr; gap: 18px; padding: 17px 0; border-top: 1px solid var(--line); }
+.milestone-year { color: #326b84; font-size: 20px; line-height: 1; font-weight: 900; letter-spacing: -.04em; }
+.milestone-item strong { display: block; font-size: 17px; line-height: 1.1; }
+.milestone-item p { margin: 5px 0 0; color: #5c5e57; font-size: 14px; line-height: 1.4; }
+
 @media (max-width: 620px) {
-  .stop-card[data-corridor="survey"] { padding-left: 12px; }
+  .stop-card[data-corridor="survey"], .stop-card[data-corridor="aerospace"] { padding-left: 12px; }
   .survey-readings { margin-left: -4px; margin-right: -4px; padding: 20px 16px; }
   .hotspot-topline { align-items: flex-end; }
   .hotspot-place { font-size: 14px; }
+  .milestone-item { grid-template-columns: 70px 1fr; gap: 12px; }
+  .milestone-year { font-size: 17px; }
 }
