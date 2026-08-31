@@ -1,21 +1,26 @@
 .hero::after { display: none; }
 
+/* Match the approved desktop composition: large circular emblem on the right,
+   with the title and copy holding the left side of the hero. */
+.hero {
+  grid-template-columns: minmax(0, 1.12fr) minmax(430px, .88fr);
+}
+
 .hero-visual {
   position: relative;
   z-index: 2;
   align-self: center;
   justify-self: end;
-  width: clamp(300px, 28vw, 500px);
-  margin-right: clamp(0px, 1.5vw, 26px);
+  width: min(46vw, 760px);
+  margin-right: -2vw;
   display: grid;
   justify-items: center;
-  gap: 14px;
 }
 
 .hero-art {
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   margin: 0;
   border-radius: 50%;
   overflow: hidden;
@@ -63,10 +68,10 @@
 .hero-art-symbol {
   position: absolute;
   z-index: 3;
-  width: 61%;
+  width: 52%;
   height: auto;
-  left: 19.5%;
-  top: 12%;
+  left: 24%;
+  top: 18%;
   color: #080906;
   filter: drop-shadow(0 1px 0 rgba(236,209,148,.18));
 }
@@ -76,67 +81,50 @@
   z-index: 3;
   left: 8%;
   right: 8%;
-  bottom: 7.5%;
+  bottom: 9%;
   text-align: center;
   color: #080906;
-  font-size: clamp(32px, 3.9vw, 66px);
+  font-size: clamp(34px, 5vw, 82px);
   line-height: .82;
   font-weight: 900;
   letter-spacing: -.055em;
   text-transform: uppercase;
 }
 
+/* The approved hero uses the emblem by itself; the stop count appears later in the tour. */
 .hero-visual .hero-stat {
-  justify-self: stretch;
-  max-width: none;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px;
-  align-items: end;
-  color: #b8baaf;
+  display: none;
 }
 
-.hero-visual .hero-stat-number {
-  font-size: 48px;
-}
-
-.hero-visual .hero-stat > span:last-child {
-  max-width: 240px;
-  padding-bottom: 3px;
-  font-size: 12px;
-}
-
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(300px, .62fr);
+    grid-template-columns: minmax(0, 1fr) minmax(350px, .78fr);
   }
+
   .hero-visual {
-    width: clamp(290px, 34vw, 410px);
+    width: min(43vw, 620px);
     margin-right: 0;
   }
 }
 
 @media (max-width: 900px) {
-  .hero-visual {
-    width: min(58vw, 420px);
-    justify-self: center;
-    margin: 20px auto 0;
+  .hero {
+    grid-template-columns: 1fr;
   }
-  .hero-visual .hero-stat {
-    display: flex;
-    align-items: end;
-    gap: 12px;
+
+  .hero-visual {
+    width: min(74vw, 560px);
+    justify-self: center;
+    margin: 24px auto 0;
   }
 }
 
 @media (max-width: 620px) {
   .hero-visual {
-    width: min(76vw, 340px);
+    width: min(82vw, 390px);
   }
+
   .hero-art-word {
-    font-size: clamp(30px, 11vw, 52px);
-  }
-  .hero-visual .hero-stat-number {
-    font-size: 42px;
+    font-size: clamp(30px, 12vw, 58px);
   }
 }
