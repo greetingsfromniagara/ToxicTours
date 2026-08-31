@@ -1,10 +1,13 @@
-const CACHE_NAME = 'toxic-niagara-v1';
+const CACHE_NAME = 'toxic-niagara-v2';
 const APP_SHELL = [
   './',
   './index.html',
   './styles.css',
+  './survey.css',
   './app.js',
   './data/stops.js',
+  './data/survey.js',
+  './data/bell.js',
   './manifest.webmanifest',
   './icons/icon.svg'
 ];
@@ -27,14 +30,14 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) return cached;
-      return fetch(event.request).then(response => {
-        if (!response || response.status !== 200 || response.type === 'opaque') return response;
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+    fetch(event.request)
+      .then(response => {
+        if (response && response.status === 200 && response.type !== 'opaque') {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        }
         return response;
-      }).catch(() => caches.match('./index.html'));
-    })
+      })
+      .catch(() => caches.match(event.request).then(cached => cached || caches.match('./index.html')))
   );
 });
