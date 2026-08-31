@@ -1,0 +1,5 @@
+Anomaly,Name,Address,Reading_uR_h,Relative_to_9_uR_h_background,Description,Precision
+#43,738 Upper Mountain Road,"738 Upper Mountain Road, Lewiston, NY",710,78.9x,"Highest surface gamma exposure rate in the 1985 survey. Elevated strip along a ditch and gravel driveway; sample contained uranium-238 and thorium-232.",Address-based historical location
+#81,6901 Buffalo Avenue,"6901 Buffalo Avenue, Niagara Falls, NY",160,17.8x,"Maximum surface reading reported within the Niagara Falls group, measured on a gravel driveway.",Address-based historical location
+#63,3060 Grand Island Boulevard,"3060 Grand Island Boulevard, Grand Island, NY",160,17.8x,"Maximum measured in a culvert northeast of the address; elevated radium-226, uranium-238 and thorium-232 were reported in soil.",Address-based historical location
+#52,2924 Military Road,"2924 Military Road, Niagara Falls, NY",140,15.6x,"Measured at the southwest corner of an asphalt driveway; one of the anomalies associated with slag containing elevated thorium.",Address-based historical location
