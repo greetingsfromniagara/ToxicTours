@@ -13,6 +13,7 @@
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./survey.css">
+  <link rel="stylesheet" href="./hero-art.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to tour</a>
@@ -50,9 +51,37 @@
         </div>
         <p class="location-status" id="locationStatus" role="status" aria-live="polite">Location is off. The tour works without it.</p>
       </div>
-      <div class="hero-stat" aria-label="Tour overview">
-        <span class="hero-stat-number" id="stopCount">11</span>
-        <span>stops · industrial corridors · aerospace · a regional waste network</span>
+
+      <div class="hero-visual">
+        <figure class="hero-art" role="img" aria-label="Vintage Niagara Falls photograph overlaid with a toxic skull and crossbones warning symbol">
+          <div class="hero-art-photo" aria-hidden="true"></div>
+          <svg class="hero-art-symbol" viewBox="0 0 100 105" aria-hidden="true">
+            <defs>
+              <mask id="skullCutouts">
+                <rect width="100" height="105" fill="white"/>
+                <circle cx="39" cy="31" r="7.2" fill="black"/>
+                <circle cx="61" cy="31" r="7.2" fill="black"/>
+                <path d="M50 42c-4.6 0-7 5.7-7 9.3 0 2.3 1.7 3.5 3.6 2.3l3.4-2.2 3.4 2.2c1.9 1.2 3.6 0 3.6-2.3C57 47.7 54.6 42 50 42Z" fill="black"/>
+              </mask>
+            </defs>
+            <path d="M50 6C30 6 18 18.4 18 36c0 9.4 3.4 17.3 9.2 22.8v9.4c0 5.8 4.8 10.6 10.6 10.6h24.4c5.8 0 10.6-4.8 10.6-10.6v-9.4C78.6 53.3 82 45.4 82 36 82 18.4 70 6 50 6Z" fill="currentColor" mask="url(#skullCutouts)"/>
+            <g fill="currentColor">
+              <g transform="rotate(35 50 85)">
+                <rect x="19" y="80" width="62" height="10" rx="5"/>
+                <circle cx="18" cy="85" r="6"/><circle cx="82" cy="85" r="6"/>
+              </g>
+              <g transform="rotate(-35 50 85)">
+                <rect x="19" y="80" width="62" height="10" rx="5"/>
+                <circle cx="18" cy="85" r="6"/><circle cx="82" cy="85" r="6"/>
+              </g>
+            </g>
+          </svg>
+          <span class="hero-art-word" aria-hidden="true">Toxic</span>
+        </figure>
+        <div class="hero-stat" aria-label="Tour overview">
+          <span class="hero-stat-number" id="stopCount">11</span>
+          <span>stops · industrial corridors · aerospace · a regional waste network</span>
+        </div>
       </div>
     </section>
 
