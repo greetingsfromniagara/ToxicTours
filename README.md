@@ -13,7 +13,8 @@ A standalone, installable Progressive Web App for the **Toxic Niagara** self-gui
 - Local progress tracking (no account required)
 - Installable PWA manifest
 - Offline app shell via service worker
-- Per-stop source links and a data structure ready for photographs, archival documents, audio, and expanded citations
+- Per-stop research/source metadata kept in the data layer rather than displayed in the visitor narrative
+- Data structure ready for photographs, archival documents, audio, and expanded evidence
 - Safety language for active industrial, landfill, federal, residential, and private-property locations
 - Core interpretive warning: **“Remediated” does not mean contamination-free.**
 
@@ -48,11 +49,11 @@ All initial stop content is in `data/stops.js`. Each stop supports:
 
 - title and subtitle
 - corridor/category
-- destination query and approximate coordinates
+- destination query and coordinates
 - short and long narrative text
 - interpretive callout
 - “what to notice” field
-- evidence/source links
+- evidence/source metadata
 
 The next content pass can add image, audio, archival-document, and citation fields without changing the app architecture.
 
