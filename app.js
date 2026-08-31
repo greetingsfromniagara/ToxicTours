@@ -53,8 +53,12 @@
       .replaceAll("'", '&#039;');
   }
 
+  function mapUrlFromQuery(query) {
+    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
+  }
+
   function mapUrl(stop) {
-    return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(stop.mapQuery || stop.location)}`;
+    return mapUrlFromQuery(stop.mapQuery || stop.location);
   }
 
   function hasCoordinates(stop) {
@@ -81,6 +85,13 @@
   function renderStops() {
     tourList.innerHTML = stops.map(stop => {
       const isVisited = visited.has(stop.id);
+      const actions = stop.multiLocation
+        ? `<div class="stop-actions single"><button class="details-button" type="button" data-action="details" data-id="${escapeHtml(stop.id)}">View hotspot readings</button></div>`
+        : `<div class="stop-actions">
+             <button class="details-button" type="button" data-action="details" data-id="${escapeHtml(stop.id)}">Read stop</button>
+             <a href="${mapUrl(stop)}" target="_blank" rel="noopener" aria-label="Directions to ${escapeHtml(stop.title)}">Directions</a>
+           </div>`;
+
       return `
         <article class="stop-card ${isVisited ? 'visited' : ''}" data-id="${escapeHtml(stop.id)}" data-corridor="${escapeHtml(stop.corridor)}">
           <div class="stop-number">${String(stop.number).padStart(2, '0')}</div>
@@ -91,10 +102,7 @@
           </div>
           <div class="stop-meta">
             <div class="stop-distance">${escapeHtml(distanceLabel(stop))}</div>
-            <div class="stop-actions">
-              <button class="details-button" type="button" data-action="details" data-id="${escapeHtml(stop.id)}">Read stop</button>
-              <a href="${mapUrl(stop)}" target="_blank" rel="noopener" aria-label="Directions to ${escapeHtml(stop.title)}">Directions</a>
-            </div>
+            ${actions}
             <button class="visit-toggle" type="button" data-action="visit" data-id="${escapeHtml(stop.id)}">${isVisited ? 'Mark as not visited' : 'Mark as visited'}</button>
           </div>
         </article>`;
@@ -102,8 +110,40 @@
     updateProgress();
   }
 
+  function hotspotMarkup(stop) {
+    if (!Array.isArray(stop.hotspots) || !stop.hotspots.length) return '';
+    const maxReading = Math.max(...stop.hotspots.map(item => item.reading || 0), 1);
+    const background = stop.backgroundReading ? ` The report used about ${escapeHtml(stop.backgroundReading)} µR/h as typical local background for comparison.` : '';
+
+    const rows = stop.hotspots.map(item => {
+      const width = Math.max(3, Math.round(((item.reading || 0) / maxReading) * 100));
+      const directions = item.mapQuery
+        ? `<a class="hotspot-directions" href="${mapUrlFromQuery(item.mapQuery)}" target="_blank" rel="noopener">Directions ↗</a>`
+        : '';
+      return `
+        <article class="hotspot-item">
+          <div class="hotspot-topline"><span>Anomaly ${escapeHtml(item.anomaly)}</span><strong>${escapeHtml(item.reading)} µR/h</strong></div>
+          <div class="hotspot-bar" aria-hidden="true"><i style="width:${width}%"></i></div>
+          <div class="hotspot-place">${escapeHtml(item.location)} ${directions}</div>
+          <p>${escapeHtml(item.note)}</p>
+        </article>`;
+    }).join('');
+
+    return `
+      <section class="survey-readings">
+        <div class="survey-readings-head">
+          <span>Highest documented 1985 readings</span>
+          <p>Historical <strong>surface gamma exposure rates</strong>, reported as gross measurements with background not subtracted.${background} These values do not describe present-day conditions and are not the same thing as a personal dose measurement.</p>
+        </div>
+        <div class="hotspot-list">${rows}</div>
+      </section>`;
+  }
+
   function openStop(stop) {
     const paragraphs = (stop.body || []).map(p => `<p>${escapeHtml(p)}</p>`).join('');
+    const hotspotSection = hotspotMarkup(stop);
+    const directions = stop.multiLocation ? '' : `<a class="dialog-map" href="${mapUrl(stop)}" target="_blank" rel="noopener">Open driving directions ↗</a>`;
+
     dialogContent.innerHTML = `
       <article class="dialog-inner">
         <div class="dialog-number">Stop ${String(stop.number).padStart(2, '0')} · ${escapeHtml(stop.location)} · ${escapeHtml(stop.duration)}</div>
@@ -111,9 +151,10 @@
         <p class="dialog-kicker">${escapeHtml(stop.kicker)}</p>
         <p class="dialog-summary">${escapeHtml(stop.summary)}</p>
         <div class="dialog-body">${paragraphs}</div>
+        ${hotspotSection}
         <div class="dialog-callout">${escapeHtml(stop.callout)}</div>
         <div class="dialog-look"><strong>What to notice</strong>${escapeHtml(stop.lookFor)}</div>
-        <a class="dialog-map" href="${mapUrl(stop)}" target="_blank" rel="noopener">Open driving directions ↗</a>
+        ${directions}
       </article>`;
     stopDialog.showModal();
   }
