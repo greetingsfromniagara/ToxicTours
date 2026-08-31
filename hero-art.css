@@ -1,0 +1,136 @@
+.hero::after { display: none; }
+
+.hero-visual {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  justify-self: end;
+  width: min(42vw, 720px);
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #c7a45f;
+  box-shadow: 0 0 0 1px rgba(209,254,95,.16);
+}
+
+.hero-art-photo {
+  position: absolute;
+  inset: -3%;
+  background-image: url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Maid_of_the_Mist%2C_Niagara_Falls%2C_New_York_%28approximately_1912%29_-_DPLA_-_478d2e3cc270fe66cf1889ac1374fd25.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: sepia(1) grayscale(.15) contrast(1.28) brightness(.83);
+  transform: scale(1.08);
+}
+
+.hero-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 52% 42%, rgba(238,215,158,.08) 0 25%, rgba(31,24,13,.08) 58%, rgba(17,18,15,.52) 100%),
+    linear-gradient(rgba(216,175,92,.18), rgba(130,92,31,.24));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  opacity: .24;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(97deg, transparent 0 28px, rgba(17,18,15,.09) 29px, transparent 31px),
+    radial-gradient(circle at 23% 37%, rgba(17,18,15,.18) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 71% 63%, rgba(17,18,15,.14) 0 1px, transparent 1.5px);
+  background-size: auto, 17px 17px, 23px 23px;
+}
+
+.hero-art-symbol {
+  position: absolute;
+  z-index: 3;
+  width: 61%;
+  height: auto;
+  left: 19.5%;
+  top: 12%;
+  color: #080906;
+  filter: drop-shadow(0 1px 0 rgba(236,209,148,.18));
+}
+
+.hero-art-word {
+  position: absolute;
+  z-index: 3;
+  left: 8%;
+  right: 8%;
+  bottom: 7.5%;
+  text-align: center;
+  color: #080906;
+  font-size: clamp(38px, 5.5vw, 92px);
+  line-height: .82;
+  font-weight: 900;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.hero-visual .hero-stat {
+  justify-self: stretch;
+  max-width: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: end;
+  color: #b8baaf;
+}
+
+.hero-visual .hero-stat-number {
+  font-size: 58px;
+}
+
+.hero-visual .hero-stat > span:last-child {
+  max-width: 280px;
+  padding-bottom: 3px;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(310px, .72fr);
+  }
+  .hero-visual {
+    width: min(39vw, 560px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-visual {
+    width: min(74vw, 560px);
+    justify-self: center;
+    margin-top: 18px;
+  }
+  .hero-visual .hero-stat {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-visual {
+    width: min(88vw, 460px);
+  }
+  .hero-art-word {
+    font-size: clamp(34px, 14vw, 64px);
+  }
+}
