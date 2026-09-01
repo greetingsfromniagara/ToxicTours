@@ -23,8 +23,11 @@ button { font: inherit; }
 .skip-link:focus { transform: translateY(0); }
 
 .topbar { position: fixed; z-index: 40; top: 0; left: 0; right: 0; min-height: 64px; padding: max(12px, env(safe-area-inset-top)) 18px 10px; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: rgba(17,18,15,.92); color: var(--paper); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.12); }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; text-decoration: none; letter-spacing: -.02em; }
-.brand-mark { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--acid); color: var(--ink); font-size: 12px; letter-spacing: -.04em; }
+.brand { display: inline-flex; align-items: center; gap: 10px; min-width: 0; font-weight: 800; text-decoration: none; }
+.brand-mark { flex: 0 0 auto; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--acid); color: var(--ink); font-size: 12px; letter-spacing: -.04em; }
+.brand-copy { display: flex; min-width: 0; flex-direction: column; gap: 2px; line-height: 1; }
+.brand-place { color: var(--acid); font-size: 12px; font-weight: 900; letter-spacing: .09em; }
+.brand-tagline { font-size: 9px; font-weight: 800; letter-spacing: .025em; white-space: nowrap; }
 .topbar-actions { display: flex; align-items: center; gap: 8px; }
 .icon-button, .text-button { border: 1px solid rgba(255,255,255,.24); background: transparent; color: inherit; border-radius: 999px; min-height: 40px; cursor: pointer; }
 .icon-button { width: 42px; font-size: 20px; }
@@ -151,6 +154,10 @@ footer a:hover, footer a:focus { color: var(--paper); }
 }
 
 @media (max-width: 620px) {
+  .brand { gap: 8px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .brand-place { font-size: 11px; }
+  .brand-tagline { font-size: 7.5px; letter-spacing: .01em; }
   .topbar { padding-left: 12px; padding-right: 12px; }
   .hero { padding: 108px 18px 40px; }
   .hero h1 { font-size: clamp(70px, 27vw, 116px); }
