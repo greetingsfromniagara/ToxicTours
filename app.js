@@ -93,6 +93,20 @@
     return mapUrlFromQuery(stop.mapQuery || stop.location);
   }
 
+  function directionItems(stop) {
+    if (Array.isArray(stop.directions) && stop.directions.length) {
+      return stop.directions.filter(item => item && item.query);
+    }
+    return [{ label: 'Directions', query: stop.mapQuery || stop.location }];
+  }
+
+  function directionLinks(stop, className = '') {
+    return directionItems(stop).map(item => {
+      const linkClass = className ? ` class="${className}"` : '';
+      return `<a${linkClass} href="${mapUrlFromQuery(item.query)}" target="_blank" rel="noopener" aria-label="${escapeHtml(item.label)} to ${escapeHtml(stop.title)}">${escapeHtml(item.label)}</a>`;
+    }).join('');
+  }
+
   function hasCoordinates(stop) {
     return Number.isFinite(stop.lat) && Number.isFinite(stop.lng);
   }
@@ -117,11 +131,12 @@
   function renderStops() {
     tourList.innerHTML = stops.map(stop => {
       const isVisited = visited.has(stop.id);
+      const stopDirections = directionItems(stop);
       const actions = stop.multiLocation
         ? `<div class="stop-actions single"><button class="details-button" type="button" data-action="details" data-id="${escapeHtml(stop.id)}">View hotspot readings</button></div>`
-        : `<div class="stop-actions">
+        : `<div class="stop-actions ${stopDirections.length > 1 ? 'multiple' : ''}">
              <button class="details-button" type="button" data-action="details" data-id="${escapeHtml(stop.id)}">Read stop</button>
-             <a href="${mapUrl(stop)}" target="_blank" rel="noopener" aria-label="Directions to ${escapeHtml(stop.title)}">Directions</a>
+             ${directionLinks(stop)}
            </div>`;
 
       return `
@@ -234,7 +249,7 @@
     const paragraphs = (stop.body || []).map(p => `<p>${escapeHtml(p)}</p>`).join('');
     const milestoneSection = milestoneMarkup(stop);
     const hotspotSection = hotspotMarkup(stop);
-    const directions = stop.multiLocation ? '' : `<a class="dialog-map" href="${mapUrl(stop)}" target="_blank" rel="noopener">Open driving directions ↗</a>`;
+    const directions = stop.multiLocation ? '' : `<div class="dialog-maps">${directionLinks(stop, 'dialog-map')}</div>`;
 
     dialogContent.innerHTML = `
       <article class="dialog-inner">
@@ -343,7 +358,7 @@
   });
 
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=35', { updateViaCache: 'none' }).catch(() => {}));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=36', { updateViaCache: 'none' }).catch(() => {}));
   }
 
   renderStops();
