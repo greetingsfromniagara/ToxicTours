@@ -135,11 +135,12 @@ window.TOXIC_TOUR_STOPS = [
     lat: 43.118194,
     lng: -79.045639,
     duration: '8–12 min',
-    summary: 'This is not the Highland Avenue plant. Waste from Vanadium Corporation’s metallurgical operations was transported to the company’s disposal property along Witmer Road. New York later divided the larger site into three cleanup areas, including separate adjoining SKW and Airco landfill parcels.',
+    summary: 'Vanadium Corporation used this roughly 150-acre Witmer Road property to dispose of slag and other waste from its Highland Avenue metallurgical plant. Ownership later split the property. New York now manages it as three cleanup areas: the former SKW landfill, the adjoining Airco landfill, and a larger eastern area containing additional slag and waste. They are separate regulated parcels within one historic disposal site.',
     body: [
-      'Vanadium Corporation of America operated the roughly 150-acre Witmer Road property from 1920 to 1964. Airco acquired the western 62 acres; in 1979, SKW purchased the western 37 acres while Airco retained roughly 25 acres.',
-      'Those adjoining parcels became separate regulated landfill areas: one on the former SKW property and one on the Airco property. State records also identify an eastern 88-acre cleanup area containing slag and other waste.',
-      'State records describe waste being transported from production facilities at Highland Avenue to the Witmer Road landfill. Globe / Solsil at 3807 Highland Avenue is a separate brownfield property and is not part of this stop.'
+      'Vanadium Corporation of America used the Witmer Road property from 1920 to 1964. Waste was hauled here from the company’s production facilities on Highland Avenue.',
+      'The western 62 acres later went to Airco. In 1979, SKW purchased the western 37 acres while Airco retained the adjoining 25 acres. New York therefore tracks them as two separate landfill sites: the former SKW landfill and the Airco landfill.',
+      'The eastern 88 acres forms a third cleanup area containing slag and other waste from the earlier Vanadium operation. Together, the three areas make up one larger historic waste complex—not three unrelated sites.',
+      'Globe / Solsil at 3807 Highland Avenue is a separate brownfield property and is not part of this landfill complex.'
     ],
     callout: 'One historic Vanadium disposal site — multiple landfill parcels and cleanup areas.',
     lookFor: 'Only the public-road context along Witmer Road. Do not enter the landfill or controlled property.',
