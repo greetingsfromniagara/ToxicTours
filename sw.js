@@ -1,12 +1,12 @@
-const CACHE_NAME = 'toxic-niagara-v38';
+const CACHE_NAME = 'toxic-niagara-v39';
 const APP_SHELL = [
   './',
   './index.html',
-  './styles.css?v=33',
+  './styles.css?v=34',
   './survey.css',
   './hero-art.css',
   './assets/toxic-niagara-logo.webp',
-  './app.js?v=38',
+  './app.js?v=39',
   './data/stops.js?v=37',
   './data/survey.js',
   './data/bell.js',
