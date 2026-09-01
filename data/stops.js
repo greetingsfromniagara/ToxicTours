@@ -223,8 +223,12 @@ window.TOXIC_TOUR_STOPS = [
     title: 'Model City · the patchwork beyond NFSS',
     kicker: 'CWM + Modern Disposal on former-LOOW tracts',
     corridor: 'waste',
-    location: 'Pletcher Road / Balmer Road / Model City Road, Model City, NY',
+    location: '1550 Balmer Road / 1445 Pletcher Road, Model City, NY',
     mapQuery: '1550 Balmer Road Model City NY 14107',
+    directions: [
+      { label: 'CWM directions', query: '1550 Balmer Road Model City NY 14107' },
+      { label: 'Modern directions', query: '1445 Pletcher Road Model City NY 14107' }
+    ],
     lat: 43.2660,
     lng: -78.9440,
     duration: '8–12 min',
