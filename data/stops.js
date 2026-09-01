@@ -23,7 +23,7 @@ window.TOXIC_TOUR_STOPS = [
   },
   {
     id: 'hooker-buffalo',
-    number: 2,
+    number: 3,
     title: 'Hooker Chemical · Buffalo Avenue',
     kicker: 'The chemical corridor was also part of the atomic story',
     corridor: 'buffalo',
@@ -50,7 +50,7 @@ window.TOXIC_TOUR_STOPS = [
   },
   {
     id: 'goodyear',
-    number: 3,
+    number: 4,
     title: 'Goodyear Chemical',
     kicker: 'A living industrial site in the Buffalo Avenue landscape',
     corridor: 'buffalo',
@@ -73,7 +73,7 @@ window.TOXIC_TOUR_STOPS = [
   },
   {
     id: 'carborundum',
-    number: 4,
+    number: 5,
     title: 'Carborundum · Buffalo Avenue',
     kicker: 'The last Niagara-area industrial leg in the project’s uranium route',
     corridor: 'buffalo',
@@ -96,10 +96,10 @@ window.TOXIC_TOUR_STOPS = [
   },
   {
     id: 'electromet',
-    number: 5,
+    number: 2,
     title: 'Electromet · Union Carbide',
     kicker: 'Green salt became uranium metal here',
-    corridor: 'highland',
+    corridor: 'buffalo',
     location: 'South of Pine Avenue, east of Packard Road, Niagara Falls, NY',
     mapQuery: 'Pine Avenue and Packard Road Niagara Falls NY',
     lat: 43.1019,
