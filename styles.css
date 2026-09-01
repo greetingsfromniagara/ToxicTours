@@ -128,7 +128,12 @@ footer { background: var(--ink); color: var(--paper); padding: 42px 6vw calc(42p
 footer a { color: var(--acid); text-underline-offset: 3px; }
 footer a:hover, footer a:focus { color: var(--paper); }
 .footer-project { white-space: nowrap; font-size: clamp(10px, 2.8vw, 13px); }
-.footer-note { color: #8f9188; text-align: right; }
+.footer-note { display: flex; align-items: center; justify-content: flex-end; gap: 10px; color: #8f9188; text-align: right; }
+.ny-love-mark { flex: 0 0 auto; display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; align-items: center; justify-items: center; min-width: 32px; color: var(--paper); font-size: 16px; font-weight: 900; line-height: .72; letter-spacing: -.08em; transform: skew(-3deg); }
+.ny-love-heart { color: var(--buffalo); font-size: 1.08em; line-height: 1; }
+.ny-love-ny { grid-column: 1 / -1; margin-top: 2px; font-size: 1.08em; letter-spacing: -.12em; }
+.footer-note-divider { color: rgba(255,255,255,.28); }
+.footer-note-text { white-space: nowrap; }
 
 .stop-dialog { width: min(780px, calc(100vw - 24px)); max-height: calc(100svh - 24px); margin: auto; border: 0; border-radius: 20px; padding: 0; background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
 .stop-dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(6px); }
@@ -184,7 +189,8 @@ footer a:hover, footer a:focus { color: var(--paper); }
   .stop-actions { grid-template-columns: 1fr; }
   .dialog-inner { padding: 46px 20px 28px; }
   footer { padding-left: 18px; padding-right: 18px; flex-direction: column; }
-  .footer-note { text-align: left; }
+  .footer-note { justify-content: flex-start; text-align: left; }
+  .footer-note-text { white-space: normal; }
 }
 
 @media (prefers-reduced-motion: reduce) {
