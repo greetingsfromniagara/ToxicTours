@@ -55,23 +55,26 @@ window.TOXIC_TOUR_STOPS = [
     id: 'goodyear',
     number: 4,
     title: 'Goodyear Chemical',
-    kicker: 'A living industrial site in the Buffalo Avenue landscape',
+    kicker: 'Workers faced a bladder carcinogen — and the stacks still emit it',
     corridor: 'buffalo',
     location: '5500 Goodyear Drive, Niagara Falls, NY 14304',
     mapQuery: '5500 Goodyear Drive Niagara Falls NY 14304',
     lat: 43.086111,
     lng: -79.001944,
     duration: '5–8 min',
-    summary: 'The Goodyear chemical plant is part of the industrial belt that made Niagara Falls a national manufacturing center. Its presence helps read Buffalo Avenue as a continuous industrial system rather than a collection of isolated sites.',
+    summary: 'Since 1957, the Niagara Falls plant has used ortho-toluidine to manufacture tire antioxidants. Federal occupational-health studies found a substantial excess of bladder cancer among workers. The plant also releases ortho-toluidine through regulated stacks, connecting the workers’ exposure history to an ongoing air-emissions record.',
     body: [
-      'This stop is included for industrial context. Not every factory on the route performed Manhattan Project work, but the chemical infrastructure, waste streams, contractors, rail lines, landfills, and shared landscape are central to understanding how contamination moved.',
-      'The facility remains an active regulated industrial property. Observe only from legal public locations and do not enter the site.'
+      'NIOSH began investigating the plant in 1988 after the workers’ union raised concerns about bladder cancer. A later study followed 1,875 workers and documented 37 cases of bladder cancer — 2.87 times the number expected from New York State rates. Incidence rose with cumulative chemical exposure and reached more than six times expected in the highest-exposure group. The findings do not prove the cause of every individual diagnosis, but they show a strong exposure-related pattern.',
+      'Ortho-toluidine is an aromatic amine classified as carcinogenic to humans. Workers could absorb it through inhalation and skin contact. NIOSH research identified ortho-toluidine as the principal suspected agent while recognizing possible contributions from aniline and other workplace exposures.',
+      'The danger did not end at the factory wall. NYSDEC says the facility emits more than 100 pounds of ortho-toluidine per year from its stacks, requiring air-dispersion modeling for the surrounding community. After lowering its health-based annual guideline concentration in 2021, the state required additional controls. A 2025 consent order imposed temporary production limits and interim stack controls while permanent pollution-control equipment is developed. DEC states that current modeling indicates a low public-health risk rather than an imminent emergency, but the emissions and continuing controls remain part of the site’s present-day record.'
     ],
-    callout: 'Not every toxic site is an atomic site — but the systems overlapped.',
-    lookFor: 'The active plant footprint and its position between residential streets, Buffalo Avenue, and the river industrial zone.',
+    callout: 'The occupational cancer record and the continuing stack emissions belong in the same story.',
+    lookFor: 'The operating plant, its stacks, and its proximity to the Buffalo Avenue industrial corridor and nearby communities. Observe only from legal public locations.',
     sources: [
-      { label: 'NYSDEC — Goodyear facility', url: 'https://dec.ny.gov/environmental-protection/facilities-in-your-neighborhood/goodyear-tire-rubber-company' },
-      { label: 'NYSDEC air permit — 5500 Goodyear Drive', url: 'https://extapps.dec.ny.gov/data/dar/afs/permits/prr_929110003600149_r1.pdf' }
+      { label: 'NIOSH — o-toluidine and bladder-cancer risk', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC8363590/' },
+      { label: 'NIOSH Alert — preventing bladder cancer from o-toluidine exposure', url: 'https://www.cdc.gov/niosh/publications/numbered/90-116.html' },
+      { label: 'NYSDEC — Goodyear air-permitting and emissions controls', url: 'https://dec.ny.gov/environmental-protection/facilities-in-your-neighborhood/goodyear-tire-rubber-company' },
+      { label: 'NYSDEC — 2025 interim air-emissions control plan', url: 'https://dec.ny.gov/sites/default/files/2025-04/gyinterimairemiss.pdf' }
     ]
   },
   {
