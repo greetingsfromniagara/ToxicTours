@@ -115,6 +115,7 @@ button { font: inherit; }
 .stop-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .stop-actions button, .stop-actions a { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 12px; border-radius: 999px; border: 1px solid var(--ink); background: transparent; text-decoration: none; font-weight: 700; font-size: 13px; cursor: pointer; text-align: center; }
 .stop-actions .details-button { background: var(--ink); color: var(--paper); }
+.stop-actions.multiple .details-button { grid-column: 1 / -1; }
 .visit-toggle { border: 0; background: transparent; padding: 8px 0; text-align: left; color: var(--muted); cursor: pointer; font-size: 12px; }
 .stop-card.visited .stop-title::after { content: 'Visited'; display: inline-block; vertical-align: middle; margin-left: 10px; padding: 5px 8px; border-radius: 999px; background: var(--ink); color: var(--paper); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
 .stop-card[data-corridor="buffalo"] { box-shadow: inset 4px 0 0 var(--buffalo); padding-left: 18px; }
@@ -144,7 +145,8 @@ footer a:hover, footer a:focus { color: var(--paper); }
 .dialog-sources { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
 .dialog-sources strong { display: block; margin-bottom: 10px; text-transform: uppercase; font-size: 10px; letter-spacing: .12em; }
 .dialog-sources a { display: block; padding: 9px 0; overflow-wrap: anywhere; }
-.dialog-map { margin-top: 24px; display: inline-flex; min-height: 48px; align-items: center; padding: 0 18px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 800; }
+.dialog-maps { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+.dialog-map { display: inline-flex; min-height: 48px; align-items: center; padding: 0 18px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 800; }
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; align-items: end; min-height: 100svh; }
