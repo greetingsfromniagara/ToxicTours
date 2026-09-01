@@ -28,26 +28,25 @@ window.TOXIC_TOUR_STOPS = [
   {
     id: 'hooker-buffalo',
     number: 3,
-    title: 'Hooker Chemical · Buffalo Avenue',
-    kicker: 'The chemical corridor was also part of the atomic story',
-    corridor: 'buffalo',
-    location: 'Buffalo Avenue at 47th Street, Niagara Falls, NY',
-    mapQuery: 'Buffalo Avenue and 47th Street Niagara Falls NY',
-    lat: 43.078470,
-    lng: -79.009900,
+    title: 'Hooker Chemical · S-Area landfill',
+    kicker: 'The polluter changed. The buried waste remains.',
+    corridor: 'waste',
+    location: 'Hooker S-Area landfill · Buffalo Avenue, Niagara Falls, NY',
+    mapQuery: '43.075700,-79.005400',
+    lat: 43.075700,
+    lng: -79.005400,
     duration: '6–10 min',
-    summary: 'Hooker’s Buffalo Avenue complex belonged to the dense chemical-industrial corridor along the upper Niagara River. In the uranium chain assembled for this project, Hooker also appears in uranium-recovery work — a reminder that “chemical” and “atomic” Niagara overlapped.',
+    summary: 'Hooker Chemical used this eight-acre area within its Buffalo Avenue plant as a landfill for chemical waste. The site entered the federal Superfund program in 1983; waste remains beneath a cap while containment, collection, and groundwater systems continue to operate.',
     body: [
-      'Buffalo Avenue should not be treated as separate from Atomic Niagara. The corridor held major chemical, carbon, ceramic, and metallurgical operations whose wastes moved through the same regional disposal economy.',
-      'Hooker’s history here also adds context to Love Canal: the company that became synonymous with buried chemical waste was part of a much larger industrial system extending along the river.',
-      'The plant’s danger was not abstract. In December 1975, a rail tank car storing recovered chlorine exploded beside the Hooker complex. A federal accident summary records four plant workers killed; about 80 area residents inhaled chlorine gas and 20 were hospitalized.',
-      'The chlorine process also carried a long occupational asbestos history. Later reporting on the OxyChem/Hooker plant documented asbestos-containing diaphragms and worker exposure inside the Niagara Falls chlorine operation.'
+      'The S-Area landfill makes the second leg’s central question visible: what remains after the polluter and much of the factory landscape have changed. EPA records describe an eight-acre former landfill now owned by Occidental Chemical Corporation, Hooker’s successor.',
+      'The remedy did not remove all of the buried material. It uses a cap, barrier walls, drainage, recovery wells, and groundwater controls to contain and collect chemicals within and beyond the landfill. EPA continues five-year reviews because hazardous waste remains on site and the remedy must keep working.',
+      'The landfill sits within the larger Buffalo Avenue industrial complex. The plant’s history also includes the 1975 chlorine tank explosion that killed four workers, as well as documented occupational asbestos exposure in the chlorine operation.'
     ],
-    callout: 'Buffalo Avenue is an atomic corridor too.',
-    lookFor: 'The relationship between the river, rail and industrial parcels, and the scale of the manufacturing corridor.',
+    callout: 'The factory changed. The waste and containment system remain.',
+    lookFor: 'Only the public-road context and the relationship between the landfill, industrial property, Buffalo Avenue, and the Niagara River. Do not enter the site.',
     sources: [
-      { label: 'Historic Hooker address record', url: 'https://uspto.report/TM/72192823' },
-      { label: 'Congressional record — Buffalo Ave industrial context', url: 'https://www.govinfo.gov/content/pkg/GPO-CRECB-1979-pt6/pdf/GPO-CRECB-1979-pt6-6-3.pdf' },
+      { label: 'EPA — Hooker S-Area Superfund site', url: 'https://cumulis.epa.gov/supercpad/cursites/csitinfo.cfm?id=0202150' },
+      { label: 'EPA / NYSDEC — Hooker S-Area Record of Decision', url: 'https://extapps.dec.ny.gov/data/DecDocs/932019A/ROD.HW.932019A.1990-09-01.hooker_s_area_epa_rod_ou1_ou3.pdf' },
       { label: 'Federal Railroad Administration — 1975 chlorine tank explosion summary', url: 'https://railroads.dot.gov/sites/fra.dot.gov/files/fra_net/18852/dot_9675_DS1.pdf' },
       { label: 'ProPublica — asbestos exposure at the OxyChem/Hooker plant', url: 'https://www.propublica.org/article/asbestos-poisoning-chemical-plant-niagara-falls' }
     ]
