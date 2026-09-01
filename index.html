@@ -83,14 +83,117 @@
         <p>Niagara was not one atomic site. It was a production network. The route crossed company lines, city lines, and eventually the boundary between factory waste and the everyday landscape.</p>
       </div>
       <ol class="process-line" aria-label="Uranium production route">
-        <li><span>01</span><strong>Shinkolobwe</strong><small>high-grade ore · Belgian Congo</small></li>
-        <li><span>02</span><strong>Linde</strong><small>oxides + uranium tetrafluoride · Tonawanda</small></li>
-        <li><span>03</span><strong>Electromet</strong><small>green salt → uranium metal · Niagara Falls</small></li>
-        <li><span>04</span><strong>Bliss & Laughlin</strong><small>uranium rolling · Lockport</small></li>
-        <li><span>05</span><strong>Hooker</strong><small>uranium recovery + chemical industry · Niagara Falls</small></li>
-        <li><span>06</span><strong>Carborundum</strong><small>final Niagara-area industrial leg in this project’s route</small></li>
-        <li><span>07</span><strong>LOOW / NFSS</strong><small>storage, burial, consolidation · Lewiston</small></li>
+        <li><span>01</span><strong>Linde</strong><small>Shinkolobwe ore · Belgian Congo (now DRC) → oxides + uranium tetrafluoride · Tonawanda</small></li>
+        <li><span>02</span><strong>Electromet</strong><small>green salt → uranium metal · Niagara Falls</small></li>
+        <li><span>03</span><strong>Bliss &amp; Laughlin</strong><small>machining + straightening uranium rods · Buffalo</small></li>
+        <li><span>04</span><strong>Hooker</strong><small>uranium recovery + chemical industry · Niagara Falls</small></li>
+        <li><span>05</span><strong>Carborundum</strong><small>final Niagara-area industrial leg in this project’s route</small></li>
+        <li><span>06</span><strong>LOOW / NFSS</strong><small>storage, burial, consolidation · Lewiston</small></li>
       </ol>
+
+      <div class="uranium-map">
+        <div class="uranium-map-head">
+          <div>
+            <div class="section-label">The regional network</div>
+            <h3>The route crossed Western New York.</h3>
+          </div>
+          <p>The numbered markers follow the six-step process above. Square markers identify related uranium-rolling facilities in Lockport and Lackawanna.</p>
+        </div>
+
+        <div class="uranium-map-key" aria-label="Map legend">
+          <span><i class="map-key-main">01</i>Main process route</span>
+          <span><i class="map-key-related"></i>Related regional uranium site</span>
+        </div>
+
+        <div class="uranium-map-scroll" role="region" aria-label="Scrollable regional uranium route map" tabindex="0">
+          <svg class="uranium-route-map" viewBox="0 0 1000 560" role="img" aria-labelledby="uranium-map-title uranium-map-desc">
+            <title id="uranium-map-title">Regional uranium production network in Western New York</title>
+            <desc id="uranium-map-desc">A schematic map showing six numbered route sites at Linde in Tonawanda, Electromet in Niagara Falls, Bliss and Laughlin in Buffalo, Hooker in Niagara Falls, Carborundum in Niagara Falls, and LOOW and NFSS in Lewiston. Related sites are Guterl and Simonds in Lockport and Bethlehem Steel, later associated with Republic Steel operations, in Lackawanna.</desc>
+
+            <path class="map-water" d="M0 0H1000V72C846 91 674 78 520 84C339 91 172 108 0 88Z"></path>
+            <path class="map-water" d="M0 366C54 379 112 409 151 454C178 486 191 523 200 560H0Z"></path>
+            <path class="map-river" d="M148 462C137 410 126 365 130 326C134 287 109 256 119 221C128 189 159 161 154 122C151 102 141 88 130 78"></path>
+            <text class="map-water-label" x="700" y="43">LAKE ONTARIO</text>
+            <text class="map-water-label" x="42" y="518">LAKE ERIE</text>
+            <text class="map-water-label" x="92" y="314" transform="rotate(-78 92 314)">NIAGARA RIVER</text>
+
+            <text class="map-place" x="250" y="116">LEWISTON</text>
+            <text class="map-place" x="252" y="223">NIAGARA FALLS</text>
+            <text class="map-place" x="418" y="350">TONAWANDA</text>
+            <text class="map-place" x="428" y="451">BUFFALO</text>
+            <text class="map-place" x="425" y="526">LACKAWANNA</text>
+            <text class="map-place" x="745" y="106">LOCKPORT</text>
+
+            <a class="map-site map-site-main" href="https://www.google.com/maps/search/?api=1&amp;query=175+East+Park+Drive+Tonawanda+NY" target="_blank" rel="noopener" aria-label="Open Linde in Tonawanda in Google Maps">
+              <g transform="translate(356 373)">
+                <circle r="19"></circle><text class="map-site-number" y="4">01</text>
+                <text class="map-site-name" x="29" y="-4">LINDE</text>
+                <text class="map-site-place" x="29" y="14">Tonawanda</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-main" href="https://www.google.com/maps/search/?api=1&amp;query=Pine+Avenue+and+Packard+Road+Niagara+Falls+NY" target="_blank" rel="noopener" aria-label="Open Electromet in Niagara Falls in Google Maps">
+              <g transform="translate(192 249)">
+                <circle r="19"></circle><text class="map-site-number" y="4">02</text>
+                <text class="map-site-name" x="29" y="-4">ELECTROMET</text>
+                <text class="map-site-place" x="29" y="14">Niagara Falls</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-main" href="https://www.google.com/maps/search/?api=1&amp;query=110+Hopkins+Street+Buffalo+NY" target="_blank" rel="noopener" aria-label="Open Bliss and Laughlin in Buffalo in Google Maps">
+              <g transform="translate(352 469)">
+                <circle r="19"></circle><text class="map-site-number" y="4">03</text>
+                <text class="map-site-name" x="29" y="-4">BLISS &amp; LAUGHLIN</text>
+                <text class="map-site-place" x="29" y="14">Buffalo</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-main map-site-left" href="https://www.google.com/maps/search/?api=1&amp;query=Buffalo+Avenue+and+47th+Street+Niagara+Falls+NY" target="_blank" rel="noopener" aria-label="Open Hooker Chemical in Niagara Falls in Google Maps">
+              <g transform="translate(120 288)">
+                <circle r="19"></circle><text class="map-site-number" y="4">04</text>
+                <text class="map-site-name" x="-29" y="-4">HOOKER</text>
+                <text class="map-site-place" x="-29" y="14">Niagara Falls</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-main" href="https://www.google.com/maps/search/?api=1&amp;query=23+Acheson+Drive+Niagara+Falls+NY" target="_blank" rel="noopener" aria-label="Open Carborundum in Niagara Falls in Google Maps">
+              <g transform="translate(225 311)">
+                <circle r="19"></circle><text class="map-site-number" y="4">05</text>
+                <text class="map-site-name" x="29" y="30">CARBORUNDUM</text>
+                <text class="map-site-place" x="29" y="48">Niagara Falls</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-main" href="https://www.google.com/maps/search/?api=1&amp;query=1397+Pletcher+Road+Lewiston+NY" target="_blank" rel="noopener" aria-label="Open LOOW and NFSS in Lewiston in Google Maps">
+              <g transform="translate(179 105)">
+                <circle r="19"></circle><text class="map-site-number" y="4">06</text>
+                <text class="map-site-name" x="29" y="-4">LOOW / NFSS</text>
+                <text class="map-site-place" x="29" y="14">Lewiston</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-related" href="https://www.google.com/maps/search/?api=1&amp;query=Former+Guterl+Specialty+Steel+Lockport+NY" target="_blank" rel="noopener" aria-label="Open Guterl and Simonds site in Lockport in Google Maps">
+              <g transform="translate(727 147)">
+                <rect x="-17" y="-17" width="34" height="34" rx="5"></rect>
+                <text class="map-site-symbol" y="5">◆</text>
+                <text class="map-site-name" x="29" y="-4">GUTERL / SIMONDS</text>
+                <text class="map-site-place" x="29" y="14">uranium + thorium rolling · Lockport</text>
+              </g>
+            </a>
+
+            <a class="map-site map-site-related" href="https://www.google.com/maps/search/?api=1&amp;query=Former+Bethlehem+Steel+Lackawanna+NY" target="_blank" rel="noopener" aria-label="Open the former Bethlehem Steel site in Lackawanna in Google Maps">
+              <g transform="translate(333 526)">
+                <rect x="-17" y="-17" width="34" height="34" rx="5"></rect>
+                <text class="map-site-symbol" y="5">◆</text>
+                <text class="map-site-name" x="29" y="-22">BETHLEHEM STEEL</text>
+                <text class="map-site-place" x="29" y="-4">uranium rolling · later Republic operation</text>
+              </g>
+            </a>
+          </svg>
+        </div>
+
+        <p class="uranium-map-note">Regional historical schematic — not a contamination map or a statement of present-day conditions. Tap any marker to open its location. Site roles follow <a href="https://www.energy.gov/lm/articles/tonawanda-new-york-site-fusrap-site-certification-summary" target="_blank" rel="noopener">DOE’s Linde record</a>, <a href="https://www.energy.gov/lm/buffalo-new-york-site" target="_blank" rel="noopener">DOE’s Bliss &amp; Laughlin record</a>, <a href="https://www.cdc.gov/niosh/ocas/bethst.html" target="_blank" rel="noopener">NIOSH’s Bethlehem Steel record</a>, and <a href="https://www.lrd.usace.army.mil/Mission/Projects/Article/3612330/guterl-steel-site/" target="_blank" rel="noopener">USACE’s Guterl record</a>.</p>
+      </div>
     </section>
 
     <section class="tour section" id="tour">
