@@ -10,15 +10,19 @@ window.TOXIC_TOUR_STOPS = [
     lat: 43.0806,
     lng: -78.9488,
     duration: '8–12 min',
-    summary: 'Hooker Chemical buried roughly 21,000 tons of chemical waste here between 1942 and 1952. The crisis that emerged in the 1970s made Love Canal a national symbol — but it was not the only contaminated landscape in Niagara.',
+    summary: 'Hooker Chemical buried roughly 21,000 tons of chemical waste here between 1942 and 1952. The crisis helped drive the creation of the federal Superfund program, and EPA placed Love Canal on Superfund’s first-ever National Priorities List in September 1983.',
     body: [
       'Love Canal is the clearest place to begin because the story became visible here: chemicals surfaced in yards and basements, families reported miscarriages, illness, and birth defects, and residents organized for relocation.',
+      'The crisis helped propel Congress to pass the Comprehensive Environmental Response, Compensation, and Liability Act in 1980 — the law commonly called Superfund. EPA officially placed Love Canal on the program’s first-ever National Priorities List in September 1983.',
+      'Superfund gives EPA the authority and funding to investigate and clean abandoned or uncontrolled hazardous-waste sites. It can require the companies or other parties responsible for contamination to perform the cleanup or reimburse the government; when no viable responsible party exists, the program can fund the work.',
       'The driving tour uses Love Canal as a reference point, not an endpoint. The same industrial era produced radioactive and chemical waste across many other Niagara sites — often handled under different laws, cleanup programs, and definitions of acceptable risk.'
     ],
     callout: 'One neighborhood revealed a much larger system.',
     lookFor: 'The scale of the former neighborhood, the fenced or controlled areas, and the proximity of ordinary streets to the historic disposal footprint.',
     sources: [
-      { label: 'EPA — Love Canal', url: 'https://www.epa.gov/archive/epa/aboutepa/love-canal-tragedy.html' }
+      { label: 'EPA — Love Canal', url: 'https://www.epa.gov/archive/epa/aboutepa/love-canal-tragedy.html' },
+      { label: 'EPA — Love Canal Superfund site profile', url: 'https://cumulis.epa.gov/supercpad/SiteProfiles/index.cfm?fuseaction=second.cleanup&id=0201290' },
+      { label: 'EPA — What is Superfund?', url: 'https://www.epa.gov/superfund/what-superfund' }
     ]
   },
   {

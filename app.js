@@ -121,31 +121,80 @@
   }
 
   function hotspotMarkup(stop) {
-    if (!Array.isArray(stop.hotspots) || !stop.hotspots.length) return '';
-    const maxReading = Math.max(...stop.hotspots.map(item => item.reading || 0), 1);
-    const background = stop.backgroundReading ? ` The report used about ${escapeHtml(stop.backgroundReading)} µR/h as typical local background for comparison.` : '';
+    const aerial = stop.aerialSurvey;
+    const hotspots = Array.isArray(stop.hotspots) ? stop.hotspots : [];
+    if (!aerial && !hotspots.length) return '';
 
-    const rows = stop.hotspots.map(item => {
-      const width = Math.max(3, Math.round(((item.reading || 0) / maxReading) * 100));
-      const directions = item.mapQuery
-        ? `<a class="hotspot-directions" href="${mapUrlFromQuery(item.mapQuery)}" target="_blank" rel="noopener">Directions ↗</a>`
-        : '';
-      return `
-        <article class="hotspot-item">
-          <div class="hotspot-topline"><span>Anomaly ${escapeHtml(item.anomaly)}</span><strong>${escapeHtml(item.reading)} µR/h</strong></div>
-          <div class="hotspot-bar" aria-hidden="true"><i style="width:${width}%"></i></div>
-          <div class="hotspot-place">${escapeHtml(item.location)} ${directions}</div>
-          <p>${escapeHtml(item.note)}</p>
-        </article>`;
-    }).join('');
+    const background = stop.backgroundReading
+      ? ` The 1985 report used about ${escapeHtml(stop.backgroundReading)} µR/h as typical local background for comparison.`
+      : '';
+
+    const aerialMarkup = aerial ? `
+      <details class="survey-group" open>
+        <summary>
+          <span class="survey-group-title"><strong>${escapeHtml(aerial.title)}</strong><small>Airborne survey · measurements averaged across several acres</small></span>
+          <span class="survey-group-count">${escapeHtml(aerial.count)} locations followed up</span>
+        </summary>
+        <p class="survey-method-note">${escapeHtml(aerial.summary)}</p>
+        <div class="aerial-zone-grid">
+          ${(aerial.zones || []).map(zone => `
+            <article class="aerial-zone">
+              <strong>${escapeHtml(zone.location)}</strong>
+              <span>${escapeHtml(zone.reading)}</span>
+              <p>${escapeHtml(zone.note)}</p>
+            </article>`).join('')}
+        </div>
+      </details>` : '';
+
+    const areas = [];
+    hotspots.forEach(item => {
+      let area = areas.find(group => group.name === item.area);
+      if (!area) {
+        area = { name: item.area || 'Other locations', items: [] };
+        areas.push(area);
+      }
+      area.items.push(item);
+    });
+
+    const groundMarkup = areas.map(area => `
+      <details class="survey-group">
+        <summary>
+          <span class="survey-group-title"><strong>${escapeHtml(area.name)}</strong><small>1984 vehicle scan · 1985 ground survey</small></span>
+          <span class="survey-group-count">${area.items.length} ${area.items.length === 1 ? 'location' : 'locations'}</span>
+        </summary>
+        <div class="hotspot-compact-list">
+          ${area.items.map(item => {
+            const reading = Number.isFinite(item.reading) ? `${escapeHtml(item.reading)} µR/h` : 'Reading in federal table';
+            const status = item.status || 'Historical anomaly';
+            const readingMeta = Number.isFinite(item.oneMeterReading)
+              ? ` · ${escapeHtml(item.oneMeterReading)} µR/h at 1 m`
+              : '';
+            return `
+              <article class="hotspot-compact-row">
+                <span class="hotspot-anomaly">${escapeHtml(item.anomaly)}</span>
+                <div class="hotspot-compact-main">
+                  <strong>${escapeHtml(item.location)}</strong>
+                  <small>${escapeHtml(status)}${readingMeta}</small>
+                  ${item.note ? `<p>${escapeHtml(item.note)}</p>` : ''}
+                </div>
+                <span class="hotspot-reading">${reading}</span>
+              </article>`;
+          }).join('')}
+        </div>
+      </details>`).join('');
 
     return `
       <section class="survey-readings">
         <div class="survey-readings-head">
-          <span>Highest documented 1985 readings</span>
-          <p>Historical <strong>surface gamma exposure rates</strong>, reported as gross measurements with background not subtracted.${background} These values do not describe present-day conditions and are not the same thing as a personal dose measurement.</p>
+          <span>Complete historical survey record</span>
+          <p>The 1979 readings are airborne averages; the numbered 1984–1985 entries are historical ground-survey locations. They are different measurement methods and should not be compared as if they were the same. Values are gross readings with background not subtracted.${background} These records do not describe present-day conditions and are not instructions to enter private property.</p>
         </div>
-        <div class="hotspot-list">${rows}</div>
+        ${aerialMarkup}
+        <div class="ground-survey-heading">
+          <strong>All 100 numbered anomalies</strong>
+          <span>Open each area to see every location</span>
+        </div>
+        ${groundMarkup}
       </section>`;
   }
 
