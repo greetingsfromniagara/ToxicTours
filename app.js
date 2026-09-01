@@ -13,18 +13,25 @@
   const progressText = document.getElementById('progressText');
   const progressPercent = document.getElementById('progressPercent');
   const progressBar = document.getElementById('progressBar');
+  const routeProgressText = document.getElementById('routeProgressText');
+  const routeProgressPercent = document.getElementById('routeProgressPercent');
+  const routeProgressBar = document.getElementById('routeProgressBar');
+  const processLine = document.querySelector('.process-line');
+  const routeItems = [...document.querySelectorAll('.process-line > li[data-route-id]')];
   const stopCount = document.getElementById('stopCount');
   const STORAGE_KEY = 'toxic-niagara-visited-v1';
+  const ROUTE_STORAGE_KEY = 'toxic-niagara-uranium-visited-v1';
 
   let userLocation = null;
   let deferredInstallPrompt = null;
-  let visited = new Set(readVisited());
+  let visited = new Set(readVisited(STORAGE_KEY));
+  let routeVisited = new Set(readVisited(ROUTE_STORAGE_KEY));
 
   stopCount.textContent = String(stops.length);
 
-  function readVisited() {
+  function readVisited(key) {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = localStorage.getItem(key);
       return raw ? JSON.parse(raw) : [];
     } catch (_) {
       return [];
@@ -34,6 +41,31 @@
   function persistVisited() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify([...visited]));
     updateProgress();
+  }
+
+  function persistRouteVisited() {
+    localStorage.setItem(ROUTE_STORAGE_KEY, JSON.stringify([...routeVisited]));
+    updateRouteProgress();
+  }
+
+  function updateRouteProgress() {
+    const total = routeItems.length;
+    const count = routeItems.filter(item => routeVisited.has(item.dataset.routeId)).length;
+    const percent = total ? Math.round((count / total) * 100) : 0;
+
+    if (routeProgressText) routeProgressText.textContent = `${count} of ${total} visited`;
+    if (routeProgressPercent) routeProgressPercent.textContent = `${percent}%`;
+    if (routeProgressBar) routeProgressBar.style.width = `${percent}%`;
+
+    routeItems.forEach(item => {
+      const isVisited = routeVisited.has(item.dataset.routeId);
+      item.classList.toggle('route-visited', isVisited);
+      const button = item.querySelector('[data-route-visit]');
+      if (button) {
+        button.textContent = isVisited ? 'Mark as not visited' : 'Mark as visited';
+        button.setAttribute('aria-pressed', String(isVisited));
+      }
+    });
   }
 
   function updateProgress() {
@@ -220,6 +252,14 @@
     stopDialog.showModal();
   }
 
+  processLine?.addEventListener('click', event => {
+    const control = event.target.closest('[data-route-visit]');
+    if (!control) return;
+    const routeId = control.dataset.routeVisit;
+    routeVisited.has(routeId) ? routeVisited.delete(routeId) : routeVisited.add(routeId);
+    persistRouteVisited();
+  });
+
   tourList.addEventListener('click', event => {
     const control = event.target.closest('[data-action]');
     if (!control) return;
@@ -275,7 +315,9 @@
 
   resetProgress.addEventListener('click', () => {
     visited = new Set();
+    routeVisited = new Set();
     persistVisited();
+    persistRouteVisited();
     renderStops();
     menuPanel.hidden = true;
     menuButton.setAttribute('aria-expanded', 'false');
@@ -305,4 +347,5 @@
   }
 
   renderStops();
+  updateRouteProgress();
 })();
