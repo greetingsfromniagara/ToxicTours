@@ -127,24 +127,26 @@ window.TOXIC_TOUR_STOPS = [
   {
     id: 'highland',
     number: 6,
-    title: 'Highland Avenue',
-    kicker: 'Vanadium · Airco · SKW · Globe',
+    title: 'Witmer Road landfill complex',
+    kicker: 'Vanadium · Airco · SKW',
     corridor: 'highland',
-    location: '3801–3807 Highland Avenue, Niagara Falls, NY',
-    mapQuery: '3807 Highland Avenue Niagara Falls NY',
-    lat: 43.122623,
-    lng: -79.039978,
+    location: 'Witmer Road, Niagara Falls, NY',
+    mapQuery: '43.118194, -79.045639',
+    lat: 43.118194,
+    lng: -79.045639,
     duration: '8–12 min',
-    summary: 'Highland Avenue is another heavy-industrial corridor with a long sequence of metallurgical operators. The history here is distinct from Electromet, but it belongs in the same regional story of slag, landfills, off-site hauling, and contaminated industrial land.',
+    summary: 'This is not the Highland Avenue plant. Waste from Vanadium Corporation’s metallurgical operations was transported to the company’s disposal property along Witmer Road. New York later divided the larger site into three cleanup areas, including separate adjoining SKW and Airco landfill parcels.',
     body: [
-      'Vanadium Corporation of America owned a 62-acre property. Pittsburgh Metallurgical later acquired it, became Airco, and SKW acquired part of the property. State records document large quantities of slag and refuse and note that some slag was hauled off site for use as fill or roadbed material.',
-      'The former Globe / Solsil property at 3807 Highland Avenue later entered New York’s Brownfield Cleanup Program. That history is exactly why the tour keeps repeating the distinction: remediation is a regulatory action, not a synonym for “nothing remains.”'
+      'Vanadium Corporation of America operated the roughly 150-acre Witmer Road property from 1920 to 1964. Airco acquired the western 62 acres; in 1979, SKW purchased the western 37 acres while Airco retained roughly 25 acres.',
+      'Those adjoining parcels became separate regulated landfill areas: one on the former SKW property and one on the Airco property. State records also identify an eastern 88-acre cleanup area containing slag and other waste.',
+      'State records describe waste being transported from production facilities at Highland Avenue to the Witmer Road landfill. Globe / Solsil at 3807 Highland Avenue is a separate brownfield property and is not part of this stop.'
     ],
-    callout: 'Highland and Buffalo were different corridors — both matter.',
-    lookFor: 'The scale of the former metallurgical properties and the relationship between factory parcels, vacant land, rail, and surrounding neighborhoods.',
+    callout: 'One historic Vanadium disposal site — multiple landfill parcels and cleanup areas.',
+    lookFor: 'Only the public-road context along Witmer Road. Do not enter the landfill or controlled property.',
     sources: [
-      { label: 'NYSDEC — U.S. Vanadium site inspection', url: 'https://extapps.dec.ny.gov/data/DecDocs/932001C/Report.HW.932001C.1988-01-01.FinalDraftSiteInspectionReport.pdf' },
-      { label: 'NYSDEC — Globe & Solsil brownfield', url: 'https://dec.ny.gov/environmental-protection/site-cleanup/regional-remediation-project-information/region-9/der-success-stories' }
+      { label: 'NYSDEC — Airco and SKW landfill history', url: 'https://extapps.dec.ny.gov/data/DecDocs/932001B/Report.HW.932001B.2014-12-17.Approved%20Reclass%202%20to%204%20Package.pdf' },
+      { label: 'NYSDEC — U.S. Vanadium cleanup area 3', url: 'https://extapps.dec.ny.gov/data/DecDocs/932001/Work%20Plan.HW.932001.2007-04-06.OU3_Remedial_Design_Work_Plan.pdf' },
+      { label: 'NYSDEC — Highland Avenue waste hauled to Witmer Road', url: 'https://extapps.dec.ny.gov/data/DecDocs/932001C/Report.HW.932001C.1980-12-01.SupportDocumentsForApplToConstructSWMF.pdf' }
     ]
   },
   {
