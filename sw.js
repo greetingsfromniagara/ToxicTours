@@ -1,4 +1,4 @@
-const CACHE_NAME = 'toxic-niagara-v8';
+const CACHE_NAME = 'toxic-niagara-v9';
 const APP_SHELL = [
   './',
   './index.html',
