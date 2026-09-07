@@ -221,6 +221,7 @@
                 <span class="hotspot-anomaly">${escapeHtml(item.anomaly)}</span>
                 <div class="hotspot-compact-main">
                   <strong>${escapeHtml(item.location)}</strong>
+                  ${item.sourcePage ? `<small><a href="https://www.osti.gov/servlets/purl/7193851#page=${Number(item.sourcePage) + 8}" target="_blank" rel="noopener">1985 address / location · Table ${escapeHtml(item.sourceTable)}, p. ${escapeHtml(item.sourcePage)} ↗</a></small>` : ''}
                   <small>${escapeHtml(status)}${readingMeta}</small>
                   ${item.note ? `<p>${escapeHtml(item.note)}</p>` : ''}
                 </div>
@@ -239,8 +240,9 @@
         ${aerialMarkup}
         <div class="ground-survey-heading">
           <strong>All 100 numbered anomalies</strong>
-          <span>Open each area to see every location</span>
+          <span>Open each area to see every historical address or survey location</span>
         </div>
+        <p class="survey-method-note">Addresses and landmarks are those recorded in the 1985 survey, published in 1986. Where no street number was given, the report’s intersection, business landmark or measured roadside offset is retained; these are not verified current postal addresses.</p>
         ${groundMarkup}
       </section>`;
   }
