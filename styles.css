@@ -240,23 +240,18 @@ footer { padding-left: clamp(12px, 4vw, 48px); flex-wrap: wrap; align-items: fle
 .footer-share-button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--acid); border-radius: 999px; background: transparent; color: var(--acid); font-weight: 800; cursor: pointer; }
 .footer-share-button:hover { background: var(--acid); color: var(--ink); }
 .footer-share-button:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
-#shareTourStatus { display: block; margin-top: 8px; color: var(--acid); }
-#shareTourStatus:empty { display: none; }
-#shareTourFallback { display: block; max-width: 440px; margin-top: 12px; }
-#shareTourFallback[hidden] { display: none; }
-#shareTourText { display: block; width: 100%; margin-top: 8px; padding: 10px; font: inherit; background: var(--paper); color: var(--ink); }
 @media (max-width: 620px) {
   footer { padding-left: 12px; }
   .footer-community { flex: none; width: 100%; }
 }
 
 /* Keep sharing beside the credit except on portrait phones. */
-.footer-community { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; flex-basis: 660px; }
-.footer-share { margin-top: 0; }
+.footer-community { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; flex-basis: 660px; }
+.footer-share { margin-top: 0; display: flex; align-items: center; gap: 12px; }
+.footer-share p { margin: 0; }
+.footer-social-links { flex-shrink: 0; }
 .footer-social-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .footer-share-button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 12px; }
-#openInstagram { display: inline-block; margin-top: 10px; }
-#openInstagram[hidden] { display: none; }
 @media (max-width: 620px) and (orientation: portrait) {
   .footer-community { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }

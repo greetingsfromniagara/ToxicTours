@@ -359,29 +359,9 @@
   });
 
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=43', { updateViaCache: 'none' }).catch(() => {}));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=44', { updateViaCache: 'none' }).catch(() => {}));
   }
 
-
-  const shareTourButton = document.getElementById('shareTourButton');
-  shareTourButton?.addEventListener('click', async () => {
-    const message = 'Hey, check out Toxic Tours Niagara Falls!\n\nhttps://greetingsfromniagara.github.io/ToxicTours/';
-    const status = document.getElementById('shareTourStatus');
-    const fallback = document.getElementById('shareTourFallback');
-    fallback.hidden = true;
-    document.getElementById('openInstagram').hidden = false;
-    try {
-      await navigator.clipboard.writeText(message);
-      status.textContent = 'Copied! Open Instagram and paste into a caption or message.';
-    } catch (_) {
-      const field = document.getElementById('shareTourText');
-      field.value = message;
-      fallback.hidden = false;
-      field.focus();
-      field.select();
-      status.textContent = 'Copy this text, then open Instagram to share it.';
-    }
-  });
 
   renderStops();
   updateRouteProgress();
