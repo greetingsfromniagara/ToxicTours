@@ -230,3 +230,22 @@ footer a:hover, footer a:focus { color: var(--paper); }
 @media (max-width: 620px) {
   .tour-choice-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Footer credit and visitor sharing. */
+footer { padding-left: clamp(12px, 4vw, 48px); flex-wrap: wrap; align-items: flex-start; }
+.footer-community { min-width: 0; flex: 1 1 360px; }
+.footer-project { white-space: normal; }
+.footer-share { margin-top: 16px; }
+.footer-share p { margin: 0 0 10px; }
+.footer-share-button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--acid); border-radius: 999px; background: transparent; color: var(--acid); font-weight: 800; cursor: pointer; }
+.footer-share-button:hover { background: var(--acid); color: var(--ink); }
+.footer-share-button:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+#shareTourStatus { display: block; margin-top: 8px; color: var(--acid); }
+#shareTourStatus:empty { display: none; }
+#shareTourFallback { display: block; max-width: 440px; margin-top: 12px; }
+#shareTourFallback[hidden] { display: none; }
+#shareTourText { display: block; width: 100%; margin-top: 8px; padding: 10px; font: inherit; background: var(--paper); color: var(--ink); }
+@media (max-width: 620px) {
+  footer { padding-left: 12px; }
+  .footer-community { flex: none; width: 100%; }
+}
