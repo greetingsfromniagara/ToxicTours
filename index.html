@@ -11,7 +11,7 @@
   <title>Toxic Niagara — Driving Tour</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=38">
+  <link rel="stylesheet" href="./styles.css?v=39">
   <link rel="stylesheet" href="./survey.css">
   <link rel="stylesheet" href="./hero-art.css">
 </head>
@@ -211,7 +211,11 @@
       <div class="footer-project"><strong>Toxic Niagara</strong> A project from <a href="https://natalianeuhaus.github.io/GreetingsFromNiagaraProject/" target="_blank" rel="noopener"><em>Greetings from Niagara</em></a></div>
       <div class="footer-share">
         <p>Don’t forget to share Toxic Tours with friends!</p>
-        <button class="footer-share-button" id="shareTourButton" type="button">Share Toxic Tours ↗</button>
+        <div class="footer-social-links">
+          <a class="footer-share-button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgreetingsfromniagara.github.io%2FToxicTours%2F" target="_blank" rel="noopener">Facebook ↗</a>
+          <button class="footer-share-button" id="shareTourButton" type="button">Copy for Instagram</button>
+        </div>
+        <a id="openInstagram" href="https://www.instagram.com/" target="_blank" rel="noopener" hidden>Open Instagram ↗</a>
         <span id="shareTourStatus" role="status" aria-live="polite"></span>
         <label id="shareTourFallback" hidden>Copy this message to share:
           <textarea id="shareTourText" rows="5" readonly></textarea>
@@ -238,6 +242,6 @@
   <script src="./data/survey.js?v=2"></script>
   <script src="./data/bell.js"></script>
   <script src="./data/route-adjustments.js?v=33"></script>
-  <script src="./app.js?v=46"></script>
+  <script src="./app.js?v=47"></script>
 </body>
 </html>
