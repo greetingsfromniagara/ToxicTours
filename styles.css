@@ -249,3 +249,14 @@ footer { padding-left: clamp(12px, 4vw, 48px); flex-wrap: wrap; align-items: fle
   footer { padding-left: 12px; }
   .footer-community { flex: none; width: 100%; }
 }
+
+/* Keep sharing beside the credit except on portrait phones. */
+.footer-community { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; flex-basis: 660px; }
+.footer-share { margin-top: 0; }
+.footer-social-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.footer-share-button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 12px; }
+#openInstagram { display: inline-block; margin-top: 10px; }
+#openInstagram[hidden] { display: none; }
+@media (max-width: 620px) and (orientation: portrait) {
+  .footer-community { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
