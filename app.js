@@ -362,6 +362,40 @@
     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=43', { updateViaCache: 'none' }).catch(() => {}));
   }
 
+
+  const shareTourButton = document.getElementById('shareTourButton');
+  shareTourButton?.addEventListener('click', async () => {
+    const shareData = {
+      title: 'Toxic Niagara — Pick your poison',
+      text: 'Pick your poison! Explore Niagara’s industrial history with Toxic Tours: follow the uranium route or discover landfills and other leftovers. Share it with a friend! #SaveOurBackyardsWNY',
+      url: 'https://greetingsfromniagara.github.io/ToxicTours/'
+    };
+    const status = document.getElementById('shareTourStatus');
+    const fallback = document.getElementById('shareTourFallback');
+    const message = shareData.text + '\n\n' + shareData.url;
+    status.textContent = '';
+    fallback.hidden = true;
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(message);
+      status.textContent = 'Message and link copied—paste them into your social post or message.';
+    } catch (_) {
+      const field = document.getElementById('shareTourText');
+      field.value = message;
+      fallback.hidden = false;
+      field.focus();
+      field.select();
+      status.textContent = 'Your message is ready to copy.';
+    }
+  });
+
   renderStops();
   updateRouteProgress();
 })();
