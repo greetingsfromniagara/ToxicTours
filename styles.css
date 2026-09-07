@@ -213,3 +213,20 @@ footer a:hover, footer a:focus { color: var(--paper); }
   .topbar-actions { flex-shrink: 0; flex-direction: column; }
   .menu-panel { top: calc(76px + max(12px, env(safe-area-inset-top))); }
 }
+
+/* Two-leg tour chooser. */
+#pick-your-poison, #uranium-route, #tour { scroll-margin-top: calc(88px + env(safe-area-inset-top)); }
+.tour-choice { background: var(--acid); }
+.tour-choice .section-label { color: var(--ink); }
+.tour-choice-intro { margin: 24px 0 32px; font-size: clamp(18px, 2vw, 26px); }
+.tour-choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.tour-choice-card { display: flex; min-width: 0; flex-direction: column; gap: 22px; padding: clamp(22px, 3vw, 40px); background: var(--ink); color: var(--acid); border: 1px solid var(--ink); border-radius: var(--radius); text-decoration: none; }
+.tour-choice-leftovers { background: var(--paper); color: var(--ink); }
+.tour-choice-label { font-size: 11px; font-weight: 800; letter-spacing: .1em; line-height: 1.4; text-transform: uppercase; }
+.tour-choice-card strong { font-size: clamp(32px, 4vw, 58px); line-height: 1; letter-spacing: -.05em; }
+.tour-choice-link { margin-top: auto; padding-top: 12px; font-size: 14px; font-weight: 800; line-height: 1.4; }
+.tour-choice-card:hover .tour-choice-link { text-decoration: underline; text-underline-offset: 4px; }
+.tour-choice-card:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+@media (max-width: 620px) {
+  .tour-choice-grid { grid-template-columns: minmax(0, 1fr); }
+}
